@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigenere Cipher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for a modern look */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-2xl">
+        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-8">Vigenere Cipher</h1>
+
+        <div class="mb-6 text-center">
+            <a href="/" class="text-blue-600 hover:text-blue-800 font-medium transition duration-300 ease-in-out">
+                &larr; Back to Home
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 text-center">Encryption</h2>
+                <form method="POST" action="/vigenere/encrypt">
+                    <div class="mb-4">
+                        <label for="encryptPlainText" class="block text-gray-700 text-sm font-bold mb-2">
+                            Plain Text:
+                        </label>
+                        <input
+                            type="text"
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            id="encryptPlainText"
+                            name="inputPlainText"
+                            placeholder="Enter text to encrypt"
+                            required
+                            autofocus
+                        >
+                    </div>
+                    <div class="mb-6">
+                        <label for="encryptKey" class="block text-gray-700 text-sm font-bold mb-2">
+                            Key (text):
+                        </label>
+                        <input
+                            type="text"
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            id="encryptKey"
+                            name="inputKey"
+                            placeholder="Enter encryption key"
+                            required
+                        >
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+                    >
+                        Encrypt
+                    </button>
+                </form>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 text-center">Decryption</h2>
+                <form method="POST" action="/vigenere/decrypt">
+                    <div class="mb-4">
+                        <label for="decryptCipherText" class="block text-gray-700 text-sm font-bold mb-2">
+                            Cipher Text:
+                        </label>
+                        <input
+                            type="text"
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-400"
+                            id="decryptCipherText"
+                            name="inputCipherText"
+                            placeholder="Enter text to decrypt"
+                            required
+                        >
+                    </div>
+                    <div class="mb-6">
+                        <label for="decryptKey" class="block text-gray-700 text-sm font-bold mb-2">
+                            Key (text):
+                        </label>
+                        <input
+                            type="text"
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-400"
+                            id="decryptKey"
+                            name="inputKey"
+                            placeholder="Enter decryption key"
+                            required
+                        >
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+                    >
+                        Decrypt
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

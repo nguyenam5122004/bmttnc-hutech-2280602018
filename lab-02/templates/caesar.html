@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for a modern look */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-teal-500 to-green-600 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-2xl">
+        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-8">CAESAR CIPHER</h1>
+
+        <div class="mb-6 text-center">
+            <a href="/" class="text-teal-600 hover:text-teal-800 font-medium transition duration-300 ease-in-out">
+                &larr; Back to Home
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 text-center">ENCRYPTION</h2>
+                <form method="POST" action="/encrypt">
+                    <div class="mb-4">
+                        <label for="inputPlainText" class="block text-gray-700 text-sm font-bold mb-2">
+                            Plain text:
+                        </label>
+                        <input
+                            type="text"
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-400"
+                            id="inputPlainText"
+                            name="inputPlainText"
+                            placeholder="Input Plain Text"
+                            required
+                            autofocus
+                        />
+                    </div>
+                    <div class="mb-6">
+                        <label for="inputKeyPlain" class="block text-gray-700 text-sm font-bold mb-2">
+                            Key:
+                        </label>
+                        <input
+                            type="number"
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-400"
+                            id="inputKeyPlain"
+                            name="inputKeyPlain"
+                            placeholder="Input Key (number)"
+                            required
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+                    >
+                        Encrypt
+                    </button>
+                </form>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 text-center">DECRYPTION</h2>
+                <form method="POST" action="/decrypt">
+                    <div class="mb-4">
+                        <label for="inputCipherText" class="block text-gray-700 text-sm font-bold mb-2">
+                            Cipher text:
+                        </label>
+                        <input
+                            type="text"
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400"
+                            id="inputCipherText"
+                            name="inputCipherText"
+                            placeholder="Input Cipher Text"
+                            required
+                        />
+                    </div>
+                    <div class="mb-6">
+                        <label for="inputKeyCipher" class="block text-gray-700 text-sm font-bold mb-2">
+                            Key:
+                        </label>
+                        <input
+                            type="number"
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400"
+                            id="inputKeyCipher"
+                            name="inputKeyCipher"
+                            placeholder="Input Key (number)"
+                            required
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+                    >
+                        Decrypt
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
